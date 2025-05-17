@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "ba6604f9-94e6-48d1-8f10-f4987ab5cc9e",
+		"name": "ELPHP_Bardelas_AU_removal",
+		"description": "Postman collection for Community Skill Exchange API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43356643",
+		"_collection_link": "https://www.postman.com/sdf777-8058/workspace/ding/collection/43356643-ba6604f9-94e6-48d1-8f10-f4987ab5cc9e?action=share&source=collection_link&creator=43356643"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Skill Exchanges",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/skill-exchanges",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"skill-exchanges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Skill Exchange",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"skill_offered\": \"Piano Lessons\",\n  \"skill_requested\": \"Math Tutoring\",\n  \"description\": \"Experienced pianist offering lessons.\",\n  \"location\": \"Cebu City\",\n  \"available_times\": [\n    \"Weekends\",\n    \"Evenings\"\n  ],\n  \"status\": \"active\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/skill-exchanges",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"skill-exchanges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Skill Exchange",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/skill-exchanges/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"skill-exchanges",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Skill Exchange",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"skill_offered\": \"Graphic Design\",\n  \"skill_requested\": \"Pet Grooming\",\n  \"description\": \"Can help with flyers and posters.\",\n  \"location\": \"Mandaue\",\n  \"available_times\": [\n    \"Weekdays\"\n  ],\n  \"status\": \"pending\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/skill-exchanges/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"skill-exchanges",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Skill Exchange",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/skill-exchanges/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"skill-exchanges",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My Skill Exchanges",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/my-skill-exchanges",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"my-skill-exchanges"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
